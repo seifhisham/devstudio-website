@@ -18,7 +18,7 @@ export function SectionLayout({
   return (
     <section
       id={id}
-      className={`relative overflow-hidden px-6 py-[var(--spacing-59)] sm:px-10 lg:px-[80px] lg:py-[var(--spacing-99)] ${className}`}
+      className={`section-panel relative overflow-hidden px-6 py-[var(--spacing-59)] sm:px-10 lg:px-[80px] lg:py-[var(--spacing-99)] ${className}`}
     >
       {showParticles && <ParticleField />}
       <div className="relative z-10 mx-auto grid max-w-[var(--page-max-width)] gap-[var(--spacing-32)] lg:grid-cols-2 lg:gap-[var(--spacing-59)]">

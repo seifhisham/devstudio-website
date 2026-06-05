@@ -24,6 +24,10 @@ Edit [`lib/site-config.ts`](lib/site-config.ts) to update:
 
 No need to hunt through components — all copy lives in `site-config.ts`.
 
+## Dark / light mode
+
+A **Light / Dark** toggle sits in the header (top right). The choice is saved in the browser and defaults to dark mode. Theme tokens live in `app/globals.css` under `:root` (dark) and `.light`.
+
 ## Design system
 
 Visual tokens from `design.md` are in [`app/globals.css`](app/globals.css):

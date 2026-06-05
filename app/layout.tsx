@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -49,8 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable} h-full`}>
-      <body className="min-h-full font-body antialiased">{children}</body>
+    <html
+      lang="en"
+      className={`${inter.variable} ${cormorant.variable} h-full`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-full font-body antialiased">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

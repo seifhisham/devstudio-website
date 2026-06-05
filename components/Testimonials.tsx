@@ -11,7 +11,7 @@ export function Testimonials() {
           {siteConfig.testimonials.map((item) => (
             <blockquote
               key={item.author}
-              className="border-t border-white/20 pt-[var(--spacing-32)]"
+              className="surface-card border p-[var(--card-padding)]"
             >
               <p className="font-body text-[15px] leading-[1.5] text-pure-white">
                 &ldquo;{item.quote}&rdquo;

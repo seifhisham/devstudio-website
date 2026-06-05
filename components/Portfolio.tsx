@@ -10,7 +10,7 @@ export function Portfolio() {
           {siteConfig.portfolio.map((project) => (
             <article
               key={project.title}
-              className="border border-white/20 p-[var(--card-padding)]"
+              className="surface-card border p-[var(--card-padding)]"
             >
               <p className="label-micro text-electric-cobalt">{project.category}</p>
               <h3 className="mt-[var(--spacing-23)] font-display text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.13] text-pure-white">

@@ -8,7 +8,7 @@ export function HowWeWork() {
       rightContent={
         <ol className="flex flex-col gap-[var(--spacing-59)]">
           {siteConfig.process.map((step) => (
-            <li key={step.step} className="border-t border-white/20 pt-[var(--spacing-32)]">
+            <li key={step.step} className="surface-card border p-[var(--card-padding)]">
               <p className="label-micro text-electric-cobalt">{step.step}</p>
               <h3 className="mt-[var(--spacing-23)] font-display text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.13] text-pure-white">
                 {step.title}

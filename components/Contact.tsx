@@ -29,11 +29,11 @@ export function Contact() {
       rightContent={
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-[var(--spacing-32)]"
+          className="contact-form surface-card flex flex-col gap-[var(--spacing-32)] border p-[var(--card-padding)]"
           aria-label="Contact form"
         >
           <div>
-            <label htmlFor="name" className="label-micro text-steel-gray">
+            <label htmlFor="name" className="contact-label label-micro">
               Name
             </label>
             <input
@@ -41,11 +41,11 @@ export function Contact() {
               name="name"
               type="text"
               required
-              className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 font-body text-[14px] text-pure-white outline-none focus:border-electric-cobalt"
+              className="field-input field-input-line mt-2 w-full border px-5 py-3.5 font-body text-[15px] font-normal text-pure-white outline-none"
             />
           </div>
           <div>
-            <label htmlFor="email" className="label-micro text-steel-gray">
+            <label htmlFor="email" className="contact-label label-micro">
               Email
             </label>
             <input
@@ -53,11 +53,11 @@ export function Contact() {
               name="email"
               type="email"
               required
-              className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 font-body text-[14px] text-pure-white outline-none focus:border-electric-cobalt"
+              className="field-input field-input-line mt-2 w-full border px-5 py-3.5 font-body text-[15px] font-normal text-pure-white outline-none"
             />
           </div>
           <div>
-            <label htmlFor="message" className="label-micro text-steel-gray">
+            <label htmlFor="message" className="contact-label label-micro">
               Project details
             </label>
             <textarea
@@ -65,17 +65,14 @@ export function Contact() {
               name="message"
               required
               rows={5}
-              className="mt-2 w-full resize-y border border-white/20 bg-transparent px-4 py-3 font-body text-[14px] text-pure-white outline-none focus:border-electric-cobalt"
+              className="field-input field-input-area mt-2 w-full resize-y border px-5 py-3.5 font-body text-[15px] font-normal text-pure-white outline-none"
             />
           </div>
-          <button
-            type="submit"
-            className="self-start border border-pure-white px-[25px] py-[20px] font-body text-[13px] text-pure-white transition-opacity hover:opacity-70"
-          >
+          <button type="submit" className="contact-submit self-start">
             Send message
           </button>
           {submitted && (
-            <p className="font-body text-[14px] text-steel-gray" role="status">
+            <p className="font-body text-[14px] text-pure-white/90" role="status">
               Your email client should open shortly. If it does not, write to{" "}
               <a href={`mailto:${siteConfig.email}`} className="text-pure-white underline">
                 {siteConfig.email}
@@ -101,6 +98,12 @@ export function Contact() {
           className="font-body text-[14px] text-pure-white hover:opacity-70"
         >
           {siteConfig.email}
+        </a>
+        <a
+          href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
+          className="font-body text-[14px] text-pure-white hover:opacity-70"
+        >
+          {siteConfig.phone}
         </a>
         <div className="flex flex-wrap gap-[var(--spacing-32)]">
           <a

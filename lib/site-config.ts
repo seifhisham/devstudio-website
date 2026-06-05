@@ -1,10 +1,11 @@
 export const siteConfig = {
   name: "DevStudio",
-  tagline: "Websites & Flutter apps, built for your business",
+  tagline: "Custom software solutions built around your business. If you can imagine it, we can build it.",
   description:
-    "DevStudio is a freelance development team specializing in modern websites and Flutter mobile applications. From concept to launch, we help clients bring their digital products to life.",
+    "DevStudio is a software development team specializing in modern websites and Flutter mobile applications. From concept to launch, we help clients bring their digital products to life.",
   url: "https://devstudio.example.com",
   email: "seifhish1118@gmail.com",
+  phone: "+20 105 568 6490",
   social: {
     tiktok: "https://tiktok.com/@devstudio",
     instagram: "https://instagram.com/devstudio",
@@ -13,7 +14,7 @@ export const siteConfig = {
     { label: "Services", href: "#services" },
     { label: "Work", href: "#portfolio" },
     { label: "Team", href: "#team" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact Us", href: "#contact" },
   ],
   stats: [
     { value: "12", label: "Projects delivered", progress: 0.75 },
@@ -96,11 +97,11 @@ export const siteConfig = {
     {
       name: "Seif Hisham",
       role: "Lead Developer",
-      bio: "Full-stack and Flutter. Turns client ideas into shipped products.",
+      bio: "Full-stack Software Developer. Turns client ideas into shipped products.",
     },
     {
       name: "Ahmed Hossam",
-      role: "Mobile Developer",
+      role: "Software Developer",      
       bio: "Flutter specialist focused on performance and app store releases.",
     },
     {

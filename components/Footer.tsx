@@ -5,7 +5,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="px-6 pb-[54px] pt-[var(--spacing-59)] sm:px-10 lg:px-[80px]">
+    <footer className="site-footer px-6 pb-[54px] pt-[var(--spacing-59)] sm:px-10 lg:px-[80px]">
       <div className="mx-auto flex max-w-[var(--page-max-width)] flex-col gap-[var(--spacing-32)] sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="label-micro text-pure-white">{siteConfig.name.toUpperCase()}</p>

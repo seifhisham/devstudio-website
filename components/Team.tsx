@@ -11,10 +11,10 @@ export function Team() {
           {siteConfig.team.map((member) => (
             <article
               key={member.name}
-              className="border-t border-white/20 pt-[var(--spacing-32)]"
+              className="surface-card border p-[var(--card-padding)]"
             >
               <div
-                className="mb-[var(--spacing-23)] flex h-16 w-16 items-center justify-center border border-white/20 font-display text-2xl text-steel-gray"
+                className="mb-[var(--spacing-23)] flex h-16 w-16 items-center justify-center border border-pure-white/20 bg-surface-band font-display text-2xl text-electric-cobalt"
                 aria-hidden="true"
               >
                 {member.name.charAt(0)}

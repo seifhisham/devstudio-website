@@ -20,7 +20,7 @@ export function Services() {
       </h2>
       <div className="mt-[var(--spacing-59)] flex flex-col gap-[var(--spacing-59)]">
         {siteConfig.services.map((service) => (
-          <article key={service.title} className="border-t border-white/20 pt-[var(--spacing-32)]">
+          <article key={service.title} className="surface-card border p-[var(--card-padding)]">
             <h3 className="font-display text-[clamp(1.75rem,3vw,2.8125rem)] leading-[1.13] text-pure-white">
               {service.title}
               <br />
