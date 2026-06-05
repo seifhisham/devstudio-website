@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --color-abyss-black: #070708;
+  --color-pure-white: #ffffff;
+  --color-steel-gray: #8f8f93;
+  --color-carbon: #000000;
+  --color-electric-cobalt: #1954ec;
+  --gradient-electric-cobalt: linear-gradient(
+    135deg,
+    rgb(0, 204, 255),
+    rgb(12, 146, 246) 43%,
+    rgb(25, 84, 236) 75%,
+    rgb(25, 84, 236)
+  );
+
+  --font-graphik: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-darius: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --text-caption: 10px;
+  --leading-caption: 1.2;
+  --tracking-caption: 0.4em;
+  --text-subheading: 18px;
+  --leading-subheading: 1.4;
+  --text-heading: 45px;
+  --leading-heading: 1.13;
+  --text-heading-lg: 52px;
+  --text-display: 72px;
+
+  --spacing-23: 23px;
+  --spacing-32: 32px;
+  --spacing-59: 59px;
+  --spacing-99: 99px;
+
+  --section-gap: 59px;
+  --element-gap: 23px;
+  --card-padding: 32px;
+  --page-max-width: 1200px;
+
+  --radius-links: 4px;
+  --radius-buttons: 0px;
+}
+
+@theme inline {
+  --color-abyss-black: #070708;
+  --color-pure-white: #ffffff;
+  --color-steel-gray: #8f8f93;
+  --color-carbon: #000000;
+  --color-electric-cobalt: #1954ec;
+
+  --font-sans: var(--font-graphik);
+  --font-serif: var(--font-darius);
+
+  --spacing-23: 23px;
+  --spacing-32: 32px;
+  --spacing-59: 59px;
+  --spacing-99: 99px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-abyss-black);
+  color: var(--color-pure-white);
+  font-family: var(--font-graphik);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-darius);
+  font-weight: 300;
+}
+
+.font-body {
+  font-family: var(--font-graphik);
+}
+
+.label-micro {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  letter-spacing: var(--tracking-caption);
+  text-transform: uppercase;
+}
+
+.text-muted {
+  color: var(--color-steel-gray);
+}
+
+.accent-word {
+  color: var(--color-electric-cobalt);
+}
+
+.hairline {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@keyframes particle-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 0.9;
+  }
+}
+
+.particle-dot {
+  animation: particle-drift 6s ease-in-out infinite;
+}
