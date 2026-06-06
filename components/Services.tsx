@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/site-config";
 import { SectionLayout } from "./SectionLayout";
+import { NavChipLink } from "./ui/NavChip";
 
 export function Services() {
   return (
@@ -29,6 +30,11 @@ export function Services() {
             <p className="mt-[var(--spacing-23)] max-w-[480px] font-body text-[14px] leading-[1.5] text-steel-gray">
               {service.description}
             </p>
+            {service.title !== "Ongoing" && (
+              <NavChipLink href="#contact" accent className="mt-[var(--spacing-32)]">
+                Contact us
+              </NavChipLink>
+            )}
           </article>
         ))}
       </div>

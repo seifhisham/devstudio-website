@@ -1,15 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import { ThemeToggle } from "./ThemeToggle";
 import { NavChipButton, NavChipLink } from "./ui/NavChip";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const syncViewport = () => {
+      const desktop = media.matches;
+      setIsDesktop(desktop);
+      if (desktop) setMenuOpen(false);
+    };
+
+    syncViewport();
+    media.addEventListener("change", syncViewport);
+    return () => media.removeEventListener("change", syncViewport);
+  }, []);
 
   return (
-    <header className="site-header fixed inset-x-0 top-0 z-50 px-6 py-6 sm:px-10 lg:px-[80px]">
+    <header className="site-header fixed inset-x-0 top-0 z-50">
       <div className="mx-auto flex max-w-[var(--page-max-width)] items-center justify-between gap-4">
         <NavChipLink href="/" className="nav-chip-brand shrink-0">
           {siteConfig.name.toUpperCase()}
@@ -32,25 +46,27 @@ export function Header() {
 
         <div className="flex shrink-0 items-center gap-2">
           <ThemeToggle />
-          <NavChipButton
-            className="lg:hidden"
-            onClick={() => setMenuOpen((open) => !open)}
-            aria-expanded={menuOpen}
-            aria-controls="site-menu"
-          >
-            <span>Menu</span>
-            <span
-              className="inline-block h-1.5 w-1.5 rotate-45 border border-current"
-              aria-hidden="true"
-            />
-          </NavChipButton>
+          {!isDesktop && (
+            <NavChipButton
+              className="site-header-menu-toggle"
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-expanded={menuOpen}
+              aria-controls="site-menu"
+            >
+              <span>Menu</span>
+              <span
+                className="inline-block h-1.5 w-1.5 rotate-45 border border-current"
+                aria-hidden="true"
+              />
+            </NavChipButton>
+          )}
         </div>
       </div>
 
-      {menuOpen && (
+      {menuOpen && !isDesktop && (
         <nav
           id="site-menu"
-          className="mx-auto mt-4 max-w-[var(--page-max-width)] lg:absolute lg:right-[80px] lg:top-[68px] lg:mt-0"
+          className="site-header-menu mx-auto mt-4 max-w-[var(--page-max-width)] lg:absolute lg:top-[68px] lg:mt-0"
           aria-label="Site menu"
         >
           <div className="nav-chip-tray flex flex-wrap gap-2">

@@ -3,7 +3,17 @@ export const siteConfig = {
   tagline: "Custom software solutions built around your business. If you can imagine it, we can build it.",
   description:
     "DevStudio is a software development team specializing in modern websites and Flutter mobile applications. From concept to launch, we help clients bring their digital products to life.",
-  url: "https://devstudio.example.com",
+  url: "https://devstudio-website.vercel.app",
+  locale: "en_US",
+  keywords: [
+    "web development",
+    "flutter app development",
+    "mobile app development",
+    "freelance software developer",
+    "custom website",
+    "UI UX design",
+    "software development agency",
+  ],
   email: "seifhish1118@gmail.com",
   phone: "+20 105 568 6490",
   social: {
@@ -119,20 +129,20 @@ export const siteConfig = {
     {
       quote:
         "DevStudio delivered our app on time and on budget. Communication was clear every step of the way.",
-      author: "M. Laurent",
-      role: "Startup founder",
-    },
-    {
-      quote:
-        "Our new website looks professional and loads fast. We started getting inquiries within the first week.",
-      author: "R. Okonkwo",
+      author: "Ramy ElSaid",
       role: "Small business owner",
     },
     {
       quote:
+        "Our new website looks professional and loads fast. We started getting inquiries within the first week.",
+      author: "Shaimaa",
+      role: "Startup founder",
+    },
+    {
+      quote:
         "They understood our Flutter requirements immediately and shipped a polished MVP in six weeks.",
-      author: "T. Bergström",
-      role: "Product manager",
+      author: "Marwan ElKahky",
+      role: "Product Owner",
     },
   ],
 } as const;

@@ -18,10 +18,6 @@ export function Hero() {
           <OutlineButton href="#contact">Get a quote</OutlineButton>
           <OutlineButton href="#portfolio">View our work</OutlineButton>
         </div>
-        <div className="mt-[var(--spacing-99)] hidden sm:block">
-          <p className="label-micro text-pure-white">Scroll to explore</p>
-          <div className="ml-[2px] mt-4 h-[60px] w-px bg-pure-white" aria-hidden="true" />
-        </div>
       </div>
     </section>
   );
