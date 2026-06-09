@@ -1,4 +1,4 @@
-# DevStudio — Company Profile Website
+# Arco Studio — Company Profile Website
 
 A dark, editorial company profile site for a freelance development studio. Built with Next.js, TypeScript, and Tailwind CSS, styled from your `design.md` reference (midnight observatory aesthetic with electric cobalt accents).
 
@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Edit [`lib/site-config.ts`](lib/site-config.ts) to update:
 
-- **Company name** — change `name` from `DevStudio` to your real brand
+- **Company name** — currently `Arco Studio` in `name`
 - **Tagline & description** — used in hero, footer, and SEO metadata
 - **Email** — contact form and mailto links
 - **Social links** — TikTok and Instagram URLs for your marketing pages

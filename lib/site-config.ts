@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: "DevStudio",
+  name: "Arco Studio",
   tagline: "Custom software solutions built around your business. If you can imagine it, we can build it.",
   description:
-    "DevStudio is a software development team specializing in modern websites and Flutter mobile applications. From concept to launch, we help clients bring their digital products to life.",
+    "Arco Studio is a software development team specializing in modern websites and Flutter mobile applications. From concept to launch, we help clients bring their digital products to life.",
   url: "https://devstudio-website.vercel.app",
   locale: "en_US",
   keywords: [
@@ -17,8 +17,8 @@ export const siteConfig = {
   email: "seifhish1118@gmail.com",
   phone: "+20 105 568 6490",
   social: {
-    tiktok: "https://tiktok.com/@devstudio",
-    instagram: "https://instagram.com/devstudio",
+    tiktok: "https://tiktok.com/@arcostudio",
+    instagram: "https://instagram.com/arcostudio",
   },
   nav: [
     { label: "Services", href: "#services" },
@@ -27,9 +27,9 @@ export const siteConfig = {
     { label: "Contact Us", href: "#contact" },
   ],
   stats: [
-    { value: "12", label: "Projects delivered", progress: 0.75 },
-    { value: "4", label: "Team members", progress: 0.6 },
-    { value: "2", label: "Core platforms", progress: 0.5 },
+    { value: "24", label: "Projects delivered", progress: 0.75 },
+    { value: "4", label: "Team members", progress: 0.3 },
+    { value: "24h", label: "Maintenance available", progress: 0.9 },
   ],
   services: [
     {
@@ -91,10 +91,10 @@ export const siteConfig = {
         "Ridey is a car rental app that allows users to rent a car from a nearby location. It is a cross-platform app built with Flutter and Dart.",
     },
     {
-      title: "Boutique E-Commerce",
+      title: "E-Commerce",
       category: "Web",
       description:
-        "Custom storefront with checkout, inventory sync, and mobile-first product pages.",
+        "Custom e-commerce storefront with checkout, inventory sync, admin dashboard and mobile-first product pages.",
     },
     {
       title: "ERP System for a Home Cleaning Company",
@@ -116,8 +116,8 @@ export const siteConfig = {
     },
     {
       name: "Mohammed Said",
-      role: "Data Analyst",
-      bio: "turning complex data into actionable business insights.",
+      role: "Data Engineer And Analyst",
+      bio: "Engineering data pipelines from scratch and analyzing the metrics that actually drive growth.",
     },
     {
       name: "Mahmoud Ossama",
@@ -128,7 +128,7 @@ export const siteConfig = {
   testimonials: [
     {
       quote:
-        "DevStudio delivered our app on time and on budget. Communication was clear every step of the way.",
+        "Arco Studio delivered our app on time and on budget. Communication was clear every step of the way.",
       author: "Ramy ElSaid",
       role: "Small business owner",
     },
