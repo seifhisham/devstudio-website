@@ -212,6 +212,7 @@ footer {
   pointer-events: none;
   box-sizing: border-box;
   width: 100%;
+  overflow: visible;
   padding-top: max(1.5rem, env(safe-area-inset-top, 0px));
   padding-bottom: 1.5rem;
   padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
@@ -304,18 +305,81 @@ footer {
 }
 
 @media (max-width: 1023px) {
+  .site-header {
+    --nav-chip-height: 36px;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  }
+
+  .site-header-bar {
+    width: 100%;
+  }
+
+  .site-header-actions {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .site-header .nav-chip {
+    min-height: var(--nav-chip-height);
+    padding: 7px 11px;
+    gap: 5px;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   .nav-chip-brand {
     width: var(--nav-chip-height);
     min-width: var(--nav-chip-height);
     height: var(--nav-chip-height);
     min-height: var(--nav-chip-height);
+    flex-shrink: 0;
     padding: 0;
+    gap: 0;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .nav-chip-brand .site-logo {
     height: 26px;
     width: 26px;
     object-fit: contain;
+  }
+
+  html[dir="rtl"] .site-header .nav-chip {
+    letter-spacing: 0.02em;
+    font-size: 10px;
+    padding-inline: 10px;
+  }
+
+  .site-header .nav-chip-skeleton {
+    min-width: var(--nav-chip-height);
+    width: var(--nav-chip-height);
+    padding: 0;
+  }
+}
+
+@media (max-width: 389px) {
+  .site-header {
+    --nav-chip-height: 34px;
+  }
+
+  .site-header .nav-chip {
+    padding: 6px 9px;
+    gap: 4px;
+    font-size: 8.5px;
+    letter-spacing: 0.06em;
+  }
+
+  .nav-chip-brand .site-logo {
+    height: 24px;
+    width: 24px;
+  }
+
+  html[dir="rtl"] .site-header .nav-chip {
+    font-size: 9px;
+    padding-inline: 8px;
   }
 }
 

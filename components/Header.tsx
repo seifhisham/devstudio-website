@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <header className="site-header fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-[var(--page-max-width)] items-center justify-between gap-4">
+      <div className="site-header-bar mx-auto flex min-w-0 max-w-[var(--page-max-width)] items-center justify-between gap-1.5 sm:gap-4">
         <NavChipLink href="/" className="nav-chip-brand shrink-0">
           <Image
             src={siteConfig.logoNav}
@@ -55,7 +55,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="site-header-actions flex min-w-0 flex-1 items-center justify-end gap-1.5 sm:gap-2">
           <LanguageToggle />
           <ThemeToggle />
           {!isDesktop && (
@@ -67,7 +67,7 @@ export function Header() {
             >
               <span>{header.menu}</span>
               <span
-                className="inline-block h-1.5 w-1.5 rotate-45 border border-current"
+                className="inline-block h-1.5 w-1.5 shrink-0 rotate-45 border border-current"
                 aria-hidden="true"
               />
             </NavChipButton>
