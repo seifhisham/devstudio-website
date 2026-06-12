@@ -1,10 +1,14 @@
 "use client";
 
+import { interpolate } from "@/lib/i18n";
 import { FormEvent, useState } from "react";
-import { siteConfig } from "@/lib/site-config";
+import { useMessages, useSiteConfig } from "./LocaleProvider";
 import { SectionLayout } from "./SectionLayout";
 
 export function Contact() {
+  const { contact: contactCopy, sections } = useMessages();
+  const siteConfig = useSiteConfig();
+  const sectionCopy = sections.contact;
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -14,9 +18,11 @@ export function Contact() {
     const name = data.get("name")?.toString() ?? "";
     const email = data.get("email")?.toString() ?? "";
     const message = data.get("message")?.toString() ?? "";
-    const subject = encodeURIComponent(`Project inquiry from ${name}`);
+    const subject = encodeURIComponent(
+      interpolate(contactCopy.mailtoSubject, { name }),
+    );
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      interpolate(contactCopy.mailtoBody, { name, email, message }),
     );
     window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
@@ -30,11 +36,11 @@ export function Contact() {
         <form
           onSubmit={handleSubmit}
           className="contact-form surface-card flex flex-col gap-[var(--spacing-32)] border p-[var(--card-padding)]"
-          aria-label="Contact form"
+          aria-label={contactCopy.formAriaLabel}
         >
           <div>
             <label htmlFor="name" className="contact-label label-micro">
-              Name
+              {contactCopy.name}
             </label>
             <input
               id="name"
@@ -46,7 +52,7 @@ export function Contact() {
           </div>
           <div>
             <label htmlFor="email" className="contact-label label-micro">
-              Email
+              {contactCopy.email}
             </label>
             <input
               id="email"
@@ -58,7 +64,7 @@ export function Contact() {
           </div>
           <div>
             <label htmlFor="message" className="contact-label label-micro">
-              Project details
+              {contactCopy.message}
             </label>
             <textarea
               id="message"
@@ -69,12 +75,15 @@ export function Contact() {
             />
           </div>
           <button type="submit" className="contact-submit self-start">
-            Send message
+            {contactCopy.submit}
           </button>
           {submitted && (
             <p className="font-body text-[14px] text-pure-white/90" role="status">
-              Your email client should open shortly. If it does not, write to{" "}
-              <a href={`mailto:${siteConfig.email}`} className="text-pure-white underline">
+              {contactCopy.success}{" "}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="bidi-ltr text-pure-white underline"
+              >
                 {siteConfig.email}
               </a>
               .
@@ -84,24 +93,23 @@ export function Contact() {
       }
     >
       <h2 className="font-display text-[clamp(2.25rem,4vw,2.8125rem)] leading-[1.13] text-pure-white">
-        Start a
+        {sectionCopy.headingLine1}
         <br />
-        project
+        {sectionCopy.headingLine2}
       </h2>
       <p className="mt-[var(--spacing-32)] max-w-[480px] font-body text-[14px] leading-[1.5] text-steel-gray">
-        Tell us about your website or Flutter app idea. We typically reply within
-        one business day.
+        {sectionCopy.intro}
       </p>
       <div className="mt-[var(--spacing-59)] flex flex-col gap-[var(--spacing-23)]">
         <a
           href={`mailto:${siteConfig.email}`}
-          className="font-body text-[14px] text-pure-white hover:opacity-70"
+          className="bidi-ltr font-body text-[14px] text-pure-white hover:opacity-70"
         >
           {siteConfig.email}
         </a>
         <a
           href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
-          className="font-body text-[14px] text-pure-white hover:opacity-70"
+          className="bidi-ltr font-body text-[14px] text-pure-white hover:opacity-70"
         >
           {siteConfig.phone}
         </a>
@@ -112,7 +120,7 @@ export function Contact() {
             rel="noopener noreferrer"
             className="label-micro text-pure-white hover:opacity-70"
           >
-            TikTok
+            {contactCopy.socialTiktok}
           </a>
           <a
             href={siteConfig.social.instagram}
@@ -120,7 +128,7 @@ export function Contact() {
             rel="noopener noreferrer"
             className="label-micro text-pure-white hover:opacity-70"
           >
-            Instagram
+            {contactCopy.socialInstagram}
           </a>
         </div>
       </div>

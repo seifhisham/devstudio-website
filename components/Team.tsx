@@ -1,8 +1,14 @@
-import { siteConfig } from "@/lib/site-config";
+"use client";
+
+import { useMessages, useSiteConfig } from "./LocaleProvider";
 import { SectionLayout } from "./SectionLayout";
 import { CircleStat } from "./ui/CircleStat";
 
 export function Team() {
+  const { sections } = useMessages();
+  const siteConfig = useSiteConfig();
+  const copy = sections.team;
+
   return (
     <SectionLayout
       id="team"
@@ -32,13 +38,12 @@ export function Team() {
       }
     >
       <h2 className="font-display text-[clamp(2.25rem,4vw,2.8125rem)] leading-[1.13] text-pure-white">
-        The
+        {copy.headingLine1}
         <br />
-        team
+        {copy.headingLine2}
       </h2>
       <p className="mt-[var(--spacing-32)] max-w-[480px] font-body text-[14px] leading-[1.5] text-steel-gray">
-        A small group of developers and designers who collaborate on client
-        projects. Swap these placeholders with your real names and roles.
+        {copy.intro}
       </p>
       <div className="mt-[var(--spacing-59)] flex flex-wrap gap-[var(--spacing-59)]">
         {siteConfig.stats.map((stat) => (

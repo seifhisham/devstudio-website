@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { siteConfig } from "@/lib/site-config";
+import { LanguageToggle } from "./LanguageToggle";
+import { useMessages, useSiteConfig } from "./LocaleProvider";
 import { ThemeToggle } from "./ThemeToggle";
 import { NavChipButton, NavChipLink } from "./ui/NavChip";
 
 export function Header() {
+  const { header } = useMessages();
+  const siteConfig = useSiteConfig();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -39,7 +42,7 @@ export function Header() {
 
         <nav
           className="hidden flex-1 items-center justify-center gap-2 lg:flex"
-          aria-label="Main navigation"
+          aria-label={header.mainNavAriaLabel}
         >
           {siteConfig.nav.map((item) => (
             <NavChipLink
@@ -53,6 +56,7 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
+          <LanguageToggle />
           <ThemeToggle />
           {!isDesktop && (
             <NavChipButton
@@ -61,7 +65,7 @@ export function Header() {
               aria-expanded={menuOpen}
               aria-controls="site-menu"
             >
-              <span>Menu</span>
+              <span>{header.menu}</span>
               <span
                 className="inline-block h-1.5 w-1.5 rotate-45 border border-current"
                 aria-hidden="true"
@@ -75,7 +79,7 @@ export function Header() {
         <nav
           id="site-menu"
           className="site-header-menu mx-auto mt-4 max-w-[var(--page-max-width)] lg:absolute lg:top-[68px] lg:mt-0"
-          aria-label="Site menu"
+          aria-label={header.siteMenuAriaLabel}
         >
           <div className="nav-chip-tray flex flex-wrap gap-2">
             {siteConfig.nav.map((item) => (

@@ -2,9 +2,11 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useMessages } from "./LocaleProvider";
 import { NavChipButton } from "./ui/NavChip";
 
 export function ThemeToggle() {
+  const { theme: themeCopy } = useMessages();
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -23,10 +25,10 @@ export function ThemeToggle() {
   return (
     <NavChipButton
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDark ? themeCopy.switchToLight : themeCopy.switchToDark}
     >
       <span aria-hidden="true">{isDark ? "☀" : "☾"}</span>
-      <span>{isDark ? "Light" : "Dark"}</span>
+      <span>{isDark ? themeCopy.light : themeCopy.dark}</span>
     </NavChipButton>
   );
 }

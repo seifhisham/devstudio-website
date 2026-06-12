@@ -1,7 +1,13 @@
-import { siteConfig } from "@/lib/site-config";
+"use client";
+
+import { useMessages, useSiteConfig } from "./LocaleProvider";
 import { SectionLayout } from "./SectionLayout";
 
 export function Portfolio() {
+  const { sections } = useMessages();
+  const siteConfig = useSiteConfig();
+  const copy = sections.portfolio;
+
   return (
     <SectionLayout
       id="portfolio"
@@ -25,13 +31,12 @@ export function Portfolio() {
       }
     >
       <h2 className="font-display text-[clamp(2.25rem,4vw,2.8125rem)] leading-[1.13] text-pure-white">
-        Selected
+        {copy.headingLine1}
         <br />
-        work
+        {copy.headingLine2}
       </h2>
       <p className="mt-[var(--spacing-32)] max-w-[480px] font-body text-[14px] leading-[1.5] text-steel-gray">
-        Placeholder projects you can replace with real client work as you grow.
-        Mix web and Flutter to show the range of what your team delivers.
+        {copy.intro}
       </p>
     </SectionLayout>
   );

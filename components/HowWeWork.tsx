@@ -1,7 +1,13 @@
-import { siteConfig } from "@/lib/site-config";
+"use client";
+
+import { useMessages, useSiteConfig } from "./LocaleProvider";
 import { SectionLayout } from "./SectionLayout";
 
 export function HowWeWork() {
+  const { sections } = useMessages();
+  const siteConfig = useSiteConfig();
+  const copy = sections.process;
+
   return (
     <SectionLayout
       id="process"
@@ -22,13 +28,12 @@ export function HowWeWork() {
       }
     >
       <h2 className="font-display text-[clamp(2.25rem,4vw,2.8125rem)] leading-[1.13] text-pure-white">
-        How we
+        {copy.headingLine1}
         <br />
-        work
+        {copy.headingLine2}
       </h2>
       <p className="mt-[var(--spacing-32)] max-w-[480px] font-body text-[14px] leading-[1.5] text-steel-gray">
-        A straightforward process from first message to launch. No jargon, no
-        surprises — just a small team focused on shipping your product.
+        {copy.intro}
       </p>
     </SectionLayout>
   );

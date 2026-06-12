@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Noto_Sans_Arabic } from "next/font/google";
+import { LocaleProvider } from "@/components/LocaleProvider";
 import { StructuredData } from "@/components/StructuredData";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/lib/site-config";
@@ -16,6 +17,13 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["300"],
+  display: "swap",
+});
+
+const notoArabic = Noto_Sans_Arabic({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
@@ -73,12 +81,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable} h-full`}
+      className={`${inter.variable} ${cormorant.variable} ${notoArabic.variable} h-full`}
       suppressHydrationWarning
     >
       <body className="min-h-full font-body antialiased">
-        <StructuredData />
-        <ThemeProvider>{children}</ThemeProvider>
+        <LocaleProvider>
+          <StructuredData />
+          <ThemeProvider>{children}</ThemeProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

@@ -1,5 +1,9 @@
 import { ImageResponse } from "next/og";
-import { siteConfig } from "@/lib/site-config";
+import { defaultLocale, getMessages } from "@/lib/i18n";
+import { buildSiteConfig } from "@/lib/site-config";
+
+const messages = getMessages(defaultLocale);
+const siteConfig = buildSiteConfig(messages);
 
 export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
@@ -40,7 +44,7 @@ export default function OpenGraphImage() {
             maxWidth: 900,
           }}
         >
-          Websites & Flutter apps for ambitious clients
+          {messages.og.headline}
         </div>
         <div
           style={{

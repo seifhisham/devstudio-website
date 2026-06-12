@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
+import { useMessages, useSiteConfig } from "./LocaleProvider";
 
 export function Footer() {
+  const { footer } = useMessages();
+  const siteConfig = useSiteConfig();
   const year = new Date().getFullYear();
 
   return (
@@ -13,7 +17,7 @@ export function Footer() {
             {siteConfig.tagline}
           </p>
         </div>
-        <nav aria-label="Footer navigation">
+        <nav aria-label={footer.navAriaLabel}>
           <ul className="flex flex-wrap gap-[var(--spacing-32)]">
             {siteConfig.nav.map((item) => (
               <li key={item.href}>
@@ -29,7 +33,7 @@ export function Footer() {
         </nav>
       </div>
       <p className="mx-auto mt-[var(--spacing-59)] max-w-[var(--page-max-width)] font-body text-[13px] text-steel-gray">
-        © {year} {siteConfig.name}. All rights reserved.
+        © {year} {siteConfig.name}. {footer.copyright}
       </p>
     </footer>
   );

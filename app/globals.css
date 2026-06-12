@@ -600,3 +600,29 @@ footer {
     var(--surface-band)
   );
 }
+
+.bidi-ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic), var(--font-graphik);
+}
+
+html[dir="rtl"] .nav-chip {
+  letter-spacing: 0.08em;
+}
+
+html[dir="rtl"] .label-micro {
+  letter-spacing: 0.12em;
+}
+
+html[dir="rtl"] .contact-submit {
+  align-self: flex-end;
+}
+
+html[dir="rtl"] .contact-form .contact-submit.self-start {
+  align-self: flex-end;
+}
