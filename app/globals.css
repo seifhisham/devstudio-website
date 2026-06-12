@@ -259,10 +259,13 @@ footer {
 }
 
 .nav-chip {
+  --nav-chip-height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  box-sizing: border-box;
+  min-height: var(--nav-chip-height);
   padding: 11px 18px;
   border-radius: 9999px;
   border: 1px solid var(--border-subtle);
@@ -291,8 +294,33 @@ footer {
 }
 
 .nav-chip-brand {
-  letter-spacing: 0.4em;
-  padding-inline: 20px;
+  padding-inline: 14px;
+}
+
+.site-logo {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+
+@media (max-width: 1023px) {
+  .nav-chip-brand {
+    width: var(--nav-chip-height);
+    min-width: var(--nav-chip-height);
+    height: var(--nav-chip-height);
+    min-height: var(--nav-chip-height);
+    padding: 0;
+  }
+
+  .nav-chip-brand .site-logo {
+    height: 26px;
+    width: 26px;
+    object-fit: contain;
+  }
+}
+
+.light .site-logo {
+  filter: invert(1);
 }
 
 .nav-chip-accent {

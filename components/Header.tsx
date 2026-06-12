@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import { ThemeToggle } from "./ThemeToggle";
@@ -26,7 +27,14 @@ export function Header() {
     <header className="site-header fixed inset-x-0 top-0 z-50">
       <div className="mx-auto flex max-w-[var(--page-max-width)] items-center justify-between gap-4">
         <NavChipLink href="/" className="nav-chip-brand shrink-0">
-          {siteConfig.name.toUpperCase()}
+          <Image
+            src={siteConfig.logoNav}
+            alt={siteConfig.name}
+            width={52}
+            height={52}
+            className="site-logo"
+            priority
+          />
         </NavChipLink>
 
         <nav

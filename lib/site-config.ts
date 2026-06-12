@@ -1,5 +1,7 @@
 export const siteConfig = {
   name: "Arco Studio",
+  logo: "/Logo.png",
+  logoNav: "/Logo-nav.png",
   tagline: "Custom software solutions built around your business. If you can imagine it, we can build it.",
   description:
     "Arco Studio is a software development team specializing in modern websites and Flutter mobile applications. From concept to launch, we help clients bring their digital products to life.",
