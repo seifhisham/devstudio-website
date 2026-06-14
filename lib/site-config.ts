@@ -8,8 +8,8 @@ export const siteAssets = {
   email: "seifhish1118@gmail.com",
   phone: "+20 105 568 6490",
   social: {
-    tiktok: "https://tiktok.com/@arcostudio",
-    instagram: "https://instagram.com/arcostudio",
+    tiktok: "https://www.tiktok.com/@arco.studio8?_r=1&_t=ZS-97CfNOqGr4y",
+    instagram: "https://www.instagram.com/arcostudiodev?igsh=MWx0YWJvN2J1aXZ0",
   },
 } as const;
 
