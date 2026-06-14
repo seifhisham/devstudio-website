@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, Inter, Noto_Sans_Arabic } from "next/font/google";
 import { LocaleProvider } from "@/components/LocaleProvider";
 import { StructuredData } from "@/components/StructuredData";
@@ -89,6 +90,7 @@ export default function RootLayout({
           <StructuredData />
           <ThemeProvider>{children}</ThemeProvider>
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );
