@@ -13,6 +13,12 @@ export const siteAssets = {
   },
 } as const;
 
+export function getWhatsAppUrl(phone: string, message?: string) {
+  const base = `https://wa.me/${phone.replace(/\D/g, "")}`;
+  if (!message) return base;
+  return `${base}?text=${encodeURIComponent(message)}`;
+}
+
 const STAT_PROGRESS = [0.75, 0.3, 0.9] as const;
 
 export type SiteConfig = ReturnType<typeof buildSiteConfig>;

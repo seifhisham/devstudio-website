@@ -188,7 +188,10 @@
     "mailtoSubject": "Project inquiry from {name}",
     "mailtoBody": "Name: {name}\nEmail: {email}\n\n{message}",
     "socialTiktok": "TikTok",
-    "socialInstagram": "Instagram"
+    "socialInstagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Chat on WhatsApp",
+    "whatsappMessage": "Hi Arco Studio, I'd like to discuss a project."
   },
   "header": {
     "mainNavAriaLabel": "Main navigation",

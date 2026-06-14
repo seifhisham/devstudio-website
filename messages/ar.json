@@ -188,7 +188,10 @@
     "mailtoSubject": "استفسار مشروع من {name}",
     "mailtoBody": "الاسم: {name}\nالبريد: {email}\n\n{message}",
     "socialTiktok": "تيك توك",
-    "socialInstagram": "إنستغرام"
+    "socialInstagram": "إنستغرام",
+    "whatsapp": "واتساب",
+    "whatsappAriaLabel": "تواصل عبر واتساب",
+    "whatsappMessage": "مرحباً أركو ستوديو، أود مناقشة مشروع."
   },
   "header": {
     "mainNavAriaLabel": "التنقل الرئيسي",
