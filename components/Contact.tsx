@@ -2,6 +2,7 @@
 
 import { interpolate } from "@/lib/i18n";
 import { getWhatsAppUrl } from "@/lib/site-config";
+import { trackTikTokEvent } from "@/lib/tiktok-pixel";
 import { FormEvent, useState } from "react";
 import { useMessages, useSiteConfig } from "./LocaleProvider";
 import { SectionLayout } from "./SectionLayout";
@@ -25,6 +26,7 @@ export function Contact() {
     const body = encodeURIComponent(
       interpolate(contactCopy.mailtoBody, { name, email, message }),
     );
+    trackTikTokEvent("Contact");
     window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
@@ -83,6 +85,7 @@ export function Contact() {
               {contactCopy.success}{" "}
               <a
                 href={`mailto:${siteConfig.email}`}
+                onClick={() => trackTikTokEvent("Contact")}
                 className="bidi-ltr text-pure-white underline"
               >
                 {siteConfig.email}
@@ -104,6 +107,7 @@ export function Contact() {
       <div className="mt-[var(--spacing-59)] flex flex-col gap-[var(--spacing-23)]">
         <a
           href={`mailto:${siteConfig.email}`}
+          onClick={() => trackTikTokEvent("Contact")}
           className="bidi-ltr font-body text-[14px] text-pure-white hover:opacity-70"
         >
           {siteConfig.email}
@@ -111,12 +115,14 @@ export function Contact() {
         <div className="contact-phone-row flex flex-wrap items-center gap-3">
           <a
             href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
+            onClick={() => trackTikTokEvent("Contact")}
             className="bidi-ltr font-body text-[14px] text-pure-white hover:opacity-70"
           >
             {siteConfig.phone}
           </a>
           <a
             href={getWhatsAppUrl(siteConfig.phone, contactCopy.whatsappMessage)}
+            onClick={() => trackTikTokEvent("Contact")}
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-chip"

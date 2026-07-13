@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Inter, Noto_Sans_Arabic } from "next/font/google";
 import { LocaleProvider } from "@/components/LocaleProvider";
 import { StructuredData } from "@/components/StructuredData";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { TikTokPixel } from "@/components/TikTokPixel";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -90,6 +91,7 @@ export default function RootLayout({
           <StructuredData />
           <ThemeProvider>{children}</ThemeProvider>
         </LocaleProvider>
+        <TikTokPixel />
         <Analytics />
       </body>
     </html>
